@@ -1,0 +1,16 @@
+{
+  "name": "hackerrank",
+  "version": "1.0.0",
+  "description": "HackerRank questions",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha $1"
+  },
+  "author": "Ping Lu",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.1.1"
+  }
+}
