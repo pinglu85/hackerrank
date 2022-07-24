@@ -2,6 +2,12 @@
 
 My solutions to HackerRank Certification problems.
 
+Testing
+
+```
+npm test <test directory>
+```
+
 ## Problem Solving Basic
 
 [String Anagram](problem-solving-basic/string-anagram)
