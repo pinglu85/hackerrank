@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "HackerRank questions",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "mocha $1"
   },
