@@ -1,43 +1,26 @@
-function anagram(dictionary, query) {
-  // Initiate a hash table to store sorted strings for lookup
-  const hashTable = {};
-  // Initiate an empty array to store sorted strings for final result
-  const sortedQuery = [];
-  // Loop through query
-  // O (n * m)
+// Let N be the length of `dictionary`,  K be the maximum length of a string in `dictionary`,
+// M be the length of `query`,  and J be the maximum length of a string in `query`.
+//
+// Time: O(N * K * log(K) + M * J * log(J)).
+//
+// Space: O(max(N, M)) or O(max(N, log(M))), depending on the implementation of the sorting
+// algorithm.
+function stringAnagram(dictionary, query) {
+  const hashTable = new Map();
+
+  for (const word of dictionary) {
+    const sortedWord = word.split('').sort().join('');
+    hashTable.set(sortedWord, (hashTable.get(sortedWord) ?? 0) + 1);
+  }
+
+  const ans = [];
+
   for (let i = 0; i < query.length; i++) {
-    // Sort string
-    const sortedQ = query[i]
-      .split('')
-      .sort((a, b) => {
-        return a < b ? -1 : a > b ? 1 : 0;
-      })
-      .join('');
-    // Add the sorted string as key and 0 as value to the hash table
-    hashTable[sortedQ] = 0;
-    // Add the sorted string to the array
-    sortedQuery.push(sortedQ);
+    const sortedWord = query[i].split('').sort().join('');
+    ans[i] = hashTable.get(sortedWord) ?? 0;
   }
 
-  // Loop through dictionary
-  // O (n * m)
-  for (let i = 0; i < dictionary.length; i++) {
-    // Sort string
-    const sortedD = dictionary[i]
-      .split('')
-      .sort((a, b) => {
-        return a < b ? -1 : a > b ? 1 : 0;
-      })
-      .join('');
-    // Look up the sorted string in the hash table, if find, its value plus 1
-    if (hashTable[sortedD] !== undefined) {
-      hashTable[sortedD]++;
-    }
-  }
-
-  // Loop through the sortedQuery array.
-  // Map the value from the hash table to the array.
-  return sortedQuery.map((sorted) => hashTable[sorted]);
+  return ans;
 }
 
-module.exports = anagram;
+export default stringAnagram;
