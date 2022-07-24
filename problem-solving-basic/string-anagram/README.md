@@ -1,3 +1,3 @@
-HackerRank - Problem Solving Basic - Anagram
+# String Anagram
 
-For testing run 'npm test <test folder path>' in terminal
+![Problem statement](problem.png)
