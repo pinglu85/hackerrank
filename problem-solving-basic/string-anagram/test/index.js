@@ -24,9 +24,9 @@ describe('Test stringAnagram()', () => {
 
 async function generateTests() {
   try {
-    const tests = [];
     const files = await readdir(testCasesDirPath);
     const inputCount = files.length / 2;
+    const tests = [];
 
     for (let i = 0; i < inputCount; i++) {
       const { dictionary, query } = await readInput(files[i]);
