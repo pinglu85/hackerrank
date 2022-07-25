@@ -93,9 +93,9 @@ async function readOutput(filename) {
 }
 
 function initReadline(filename) {
-  const filePath = path.join(dirPath, filename);
+  const filepath = path.join(dirPath, filename);
   return readline.createInterface({
-    input: createReadStream(filePath),
+    input: createReadStream(filepath),
     crlfDelay: Infinity,
   });
 }
