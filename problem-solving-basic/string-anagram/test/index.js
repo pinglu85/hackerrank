@@ -9,7 +9,7 @@ import stringAnagram from '../solution.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const dirPath = path.join(__dirname, 'test-cases');
+const testCasesDirPath = path.join(__dirname, 'test-cases');
 
 const tests = await generateTests();
 
@@ -25,7 +25,7 @@ describe('Test stringAnagram()', () => {
 async function generateTests() {
   try {
     const tests = [];
-    const files = await readdir(dirPath);
+    const files = await readdir(testCasesDirPath);
     const inputCount = files.length / 2;
 
     for (let i = 0; i < inputCount; i++) {
@@ -93,7 +93,7 @@ async function readOutput(filename) {
 }
 
 function initReadline(filename) {
-  const filepath = path.join(dirPath, filename);
+  const filepath = path.join(testCasesDirPath, filename);
   return readline.createInterface({
     input: createReadStream(filepath),
     crlfDelay: Infinity,
