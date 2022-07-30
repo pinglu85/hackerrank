@@ -14,4 +14,4 @@ npm test <test directory>
 
 ## Problem Solving Intermediate
 
-[Hotel Construction](problem-solving-intermediate/hotel-construction/)
+[Hotel Construction](problem-solving-intermediate/hotel-construction)
