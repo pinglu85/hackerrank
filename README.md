@@ -11,3 +11,7 @@ npm test <test directory>
 ## Problem Solving Basic
 
 [String Anagram](problem-solving-basic/string-anagram)
+
+## Problem Solving Intermediate
+
+[Hotel Construction](problem-solving-intermediate/hotel-construction/)
