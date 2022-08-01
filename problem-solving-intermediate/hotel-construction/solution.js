@@ -65,19 +65,19 @@ function calcTripletCount(level) {
     level[level.length - 2].length +
     level[level.length - 1].length;
 
-  let tripletsCount =
+  let tripletCount =
     level[level.length - 3].length *
     level[level.length - 2].length *
     level[level.length - 1].length;
 
   for (let i = level.length - 4; i >= 0; i--) {
     const ithCombinationCount = level[i].length * prevPairCounts;
-    tripletsCount += ithCombinationCount;
+    tripletCount += ithCombinationCount;
     prevPairCounts += level[i].length * prevLengthSum;
     prevLengthSum += level[i].length;
   }
 
-  return tripletsCount;
+  return tripletCount;
 }
 
 export default numberOfWays;
