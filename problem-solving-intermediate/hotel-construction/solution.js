@@ -9,7 +9,7 @@ function numberOfWays(roads) {
     let currLevel = destinations.map((dest) => [dest]);
 
     while (currLevel.length >= 3) {
-      ans += calcWays(currLevel);
+      ans += calcTripletCount(currLevel);
 
       let nextLevel = [];
       for (const nodes of currLevel) {
@@ -54,7 +54,7 @@ function addEdge(adjacencyList, from, to) {
   adjacencyList.get(from).push(to);
 }
 
-function calcWays(level) {
+function calcTripletCount(level) {
   let prevPairCounts =
     level[level.length - 3].length * level[level.length - 2].length +
     level[level.length - 3].length * level[level.length - 1].length +
