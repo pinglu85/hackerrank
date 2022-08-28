@@ -5,7 +5,7 @@ import * as readline from 'node:readline/promises';
 import { createReadStream } from 'fs';
 import { assert } from 'chai';
 
-import numberOfWays from '../solution.js';
+import numberOfWays from '../solution1.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
