@@ -5,7 +5,8 @@ import * as readline from 'node:readline/promises';
 import { createReadStream } from 'fs';
 import { assert } from 'chai';
 
-import numberOfWays from '../solution1.js';
+import numberOfWays1 from '../solution1.js';
+import numberOfWays2 from '../solution2.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,10 +14,19 @@ const testCasesDirPath = path.join(__dirname, 'test-cases');
 
 const tests = await generateTests();
 
-describe('Test numberOfWays()', () => {
+describe('Test numberOfWays1()', () => {
   tests.forEach(({ name, input, output }) => {
     it(name, () => {
-      const result = numberOfWays(input);
+      const result = numberOfWays1(input);
+      assert.strictEqual(result, output);
+    });
+  });
+});
+
+describe('Test numberOfWays2()', () => {
+  tests.forEach(({ name, input, output }) => {
+    it(name, () => {
+      const result = numberOfWays2(input);
       assert.strictEqual(result, output);
     });
   });
